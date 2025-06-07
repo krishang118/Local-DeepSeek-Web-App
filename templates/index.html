@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Local DeepSeek</title>
+<link rel="stylesheet" href="/static/style.css" />
+</head>
+<body>
+  <div id="app">
+    <header>
+      <h1>Local DeepSeek</h1>
+      <button id="newChatBtn">+ New Chat</button>
+    </header>
+    <div id="chatSelector"></div>
+    <div id="chatWindow" class="hidden">
+      <div id="messages"></div>
+      <form id="inputForm">
+        <input type="text" id="messageInput" placeholder="Type your message..." autocomplete="off" />
+        <button type="submit">Send</button>
+      </form>
+    </div>
+  </div>
+<script src="/static/script.js"></script>
+</body>
+</html>

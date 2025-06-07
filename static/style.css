@@ -1,0 +1,281 @@
+html, body {
+  height: 100vh;
+  min-height: 0;
+  margin: 0;
+  padding: 0;
+  width: 100vw;
+  background-color: #000;
+  color: #fff;
+  font-family: -apple-system, BlinkMacSystemFont, "SF Pro", "San Francisco", "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  display: flex;
+  flex-direction: column;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  overflow: hidden;
+}
+#app {
+  height: 100vh;
+  min-height: 0;
+  width: 100vw;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+header {
+  flex-shrink: 0;
+  padding: 1.2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #000;
+  border-bottom: 1px solid #333;
+  gap: 2rem;
+  padding-left: 1rem;
+}
+header h1 {
+  flex: 0.8;
+  text-align: left;
+  color: #fff;
+  font-family: -apple-system, BlinkMacSystemFont, "SF Pro", "San Francisco", "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  font-weight: 600;
+  font-size: 1.5rem;
+  letter-spacing: -0.02em;
+  margin-left: 1rem;
+}
+button {
+  background-color: #000;
+  color: #fff;
+  border: none;
+  padding: 0.5rem 1rem;
+  cursor: pointer;
+  border-radius: 25px;
+  transition: background-color 0.2s;
+  font-family: -apple-system, BlinkMacSystemFont, "SF Pro", "San Francisco", "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  font-weight: 500;
+  font-size: 0.9rem;
+}
+button:hover {
+  background-color: #555;
+}
+#chatSelector {
+  flex-shrink: 0;
+  background: #000;
+  padding: 0.2rem 1.8rem;
+  display: flex;
+  overflow-x: auto;
+  border-bottom: 1px solid #444;
+}
+.chatTab {
+  margin-right: 0.6rem;
+  padding: 0.2rem 0.6rem;
+  cursor: pointer;
+  background: #000;
+  border-radius: 3px;
+  white-space: nowrap;
+  color: #fff;
+  border: 1px solid #000;
+  font-family: -apple-system, BlinkMacSystemFont, "SF Pro", "San Francisco", "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  font-weight: 500;
+  font-size: 0.7rem;
+  letter-spacing: -0.01em;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
+  position: relative;
+  user-select: none;
+  transition: all 0.2s ease;
+}
+.chatTab .deleteBtn {
+  display: none;
+  position: absolute;
+  right: -8px;
+  top: -8px;
+  width: 18px;
+  height: 18px;
+  background: #ff3b30;
+  border-radius: 50%;
+  color: white;
+  font-size: 14px;
+  line-height: 16px;
+  text-align: center;
+  cursor: pointer;
+  border: 2px solid #000;
+  z-index: 2;
+  transition: all 0.2s ease;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+.chatTab .deleteBtn:hover {
+  background: #ff453a;
+  transform: scale(1.1);
+}
+.chatTab.showDelete .deleteBtn {
+  display: block;
+  animation: fadeIn 0.2s ease;
+}
+@keyframes fadeIn {
+  from { opacity: 0; transform: scale(0.8); }
+  to { opacity: 1; transform: scale(1); }
+}
+.chatTab.showDelete {
+  background: #1a1a1a;
+  border-color: #ff3b30;
+  transform: scale(1.02);
+}
+.chatTab:hover {
+  background: #1a1a1a;
+}
+.chatTab.active {
+  background: #1a1a1a;
+  font-weight: 600;
+  border-bottom: none;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+}
+#chatWindow {
+  flex: 1;
+  min-height: 0;
+  display: flex;
+  flex-direction: column;
+  background: #000;
+  overflow: hidden;
+}
+.hidden {
+  display: none;
+}
+#messages {
+  flex: 1;
+  min-height: 0;
+  overflow-y: auto !important;
+  overflow-x: hidden !important;
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  background: #000;
+  scroll-behavior: smooth;
+}
+#messages::-webkit-scrollbar {
+  width: 8px;
+}
+#messages::-webkit-scrollbar-track {
+  background: #000;
+} 
+#messages::-webkit-scrollbar-thumb {
+  background-color: #333;
+  border-radius: 4px;
+}
+#messages::-webkit-scrollbar-thumb:hover {
+  background-color: #444;
+}
+.message {
+  margin: 0;
+  padding: 0.8rem 1.2rem;
+  border-radius: 18px;
+  max-width: 65%;
+  word-wrap: break-word;
+  font-family: -apple-system, BlinkMacSystemFont, "SF Pro", "San Francisco", "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  font-size: 0.95rem;
+  line-height: 1.4;
+  position: relative;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+  flex-shrink: 0;
+}
+.message.user {
+  background-color: #007AFF;
+  color: #fff;
+  align-self: flex-end;
+  border-bottom-right-radius: 4px;
+  margin-left: auto;
+  margin-right: 1.75%;
+}
+.message.assistant {
+  background-color: #2a2a2a;
+  margin-left: 1.75%;
+  margin-right: auto;
+  max-width: 85%;
+  border-radius: 12px 12px 12px 0;
+  padding: 0;
+  overflow: hidden;
+}
+.message.assistant .thinking {
+  color: #888;
+  font-style: italic;
+  padding: 0.8rem 1rem;
+  border-bottom: 1px solid #333;
+  background-color: #252525;
+  font-size: 0.95em;
+  font-family: "SF Pro", -apple-system, BlinkMacSystemFont, "San Francisco", "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+.message.assistant .response {
+  color: #fff;
+  padding: 0.8rem 1rem;
+  background-color: #2a2a2a;
+  font-family: "SF Pro", -apple-system, BlinkMacSystemFont, "San Francisco", "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+form {
+  flex-shrink: 0;
+  display: flex;
+  gap: 0.2rem;
+  padding: 0.5rem 0.1rem;
+  background: #000;
+  border-top: 1px solid #333;
+  width: 100%;
+  max-width: 1400px;
+  margin: 0 auto;
+  z-index: 10;
+}
+input[type="text"] {
+  flex: 1;
+  padding: 0.7rem 1rem;
+  border-radius: 25px;
+  border: none;
+  font-size: 1rem;
+  outline: none;
+  background-color: #000;
+  color: #fff;
+  font-family: -apple-system, BlinkMacSystemFont, "SF Pro", "San Francisco", "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  min-width: 0;
+  width: calc(95% - 80px);
+}
+button[type="submit"] {
+  padding: 0.7rem 1rem;
+  border-radius: 25px;
+  background-color: #3a3a3a;
+  color: #eee;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.2s;
+  width: 80px;
+}
+button[type="submit"]:hover {
+  background-color: #555;
+}
+#scrollIndicator {
+  position: fixed;
+  bottom: 100px;
+  right: 20px;
+  background: #007AFF;
+  color: white;
+  border: none;
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  cursor: pointer;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+  transition: all 0.3s ease;
+  z-index: 100;
+  font-size: 18px;
+  font-weight: bold;
+}
+#scrollIndicator:hover {
+  background: #0056CC;
+  transform: scale(1.1);
+}
+#scrollIndicator.show {
+  display: flex;
+  animation: slideIn 0.3s ease;
+}
+@keyframes slideIn {
+  from { transform: translateY(100px); opacity: 0; }
+  to { transform: translateY(0); opacity: 1; }
+}
