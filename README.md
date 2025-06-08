@@ -4,7 +4,7 @@ A full-stack web app for running and interacting with the DeepSeek LLM locally u
 
 ## Features
 
-- Clean and minimal chat interface
+- Clean and modern chat interface
 - Multiple chat sessions with tabs
 - Persistent chat history using browser localStorage
 - Smart scrolling with scroll-to-bottom indicator
