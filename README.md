@@ -5,7 +5,7 @@ A minimal chat interface for interacting with the DeepSeek LLM locally using Oll
 ## Features
 
 - Clean and minimal chat interface
-- Multiple chat sessions with tabs; chat deletion possible with triple-click
+- Multiple chat sessions with tabs
 - Persistent chat history using browser localStorage
 - Smart scrolling with scroll-to-bottom indicator
 - Local and secure LLM processing (possible without internet connectivity too)
@@ -62,7 +62,7 @@ Before beginning, ensure you have the following installed:
 - Click '+ New Chat' to start a new conversation.
 - Type your message in the input box and press Enter or click 'Send'.
 - Switch between different chats using the tabs at the top.
-- Triple-click a chat tab to reveal the delete button.
+- Triple-click a chat tab to reveal the delete button for the chat.
 - Use the scroll indicator to scroll through the chat.
 
 ## Project Structure
