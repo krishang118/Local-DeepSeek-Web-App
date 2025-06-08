@@ -1,6 +1,6 @@
 # Local DeepSeek Chat Web App
 
-A minimal full-stack web app for running and interacting with the DeepSeek LLM locally using Ollama.
+A full-stack web app for running and interacting with the DeepSeek LLM locally using Ollama.
 
 ## Features
 
