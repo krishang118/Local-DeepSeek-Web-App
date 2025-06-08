@@ -72,10 +72,10 @@ Local-DeepSeek-Web-App/
 ├── app.py              # Flask backend application
 ├── requirements.txt    # Python dependencies
 ├── static/
-│   ├── script.js      # Frontend JavaScript
-│   └── style.css      # CSS Styling
+│   ├── script.js       # Frontend JavaScript
+│   └── style.css       # CSS Styling
 └── templates/
-    └── index.html     # Main HTML template
+    └── index.html      # Main HTML template
 ```
 
 ## How It Works
