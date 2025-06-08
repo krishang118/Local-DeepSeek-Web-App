@@ -63,7 +63,7 @@ Before beginning, ensure you have the following installed:
 - Type your message in the input box and press Enter or click 'Send'.
 - Switch between different chats using the tabs at the top.
 - Triple-click a chat tab to reveal the delete button for the chat.
-- Use the scroll indicator to scroll through the chat.
+- Use the scroll indicator to scroll down through the chat.
 
 ## Project Structure
 
@@ -82,7 +82,7 @@ Local-DeepSeek-Web-App/
 
 1. The Flask backend (`app.py`) serves the web interface and handles chat requests.
 2. When a message is sent:
-   - The message is sent to the backend.
+   - It goes to the backend.
    - The backend calls Ollama with the DeepSeek model.
    - The model's response is streamed back to the frontend.
    - The conversation is saved in the browser's localStorage.
