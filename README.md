@@ -20,7 +20,7 @@ Before beginning, ensure you have the following installed:
    - Can be downloaded from [python.org](https://python.org).
 
 2. **Ollama**
-   - Required for running the AI model locally.
+   - Required for running the LLM locally.
    - Can be downloaded from [ollama.ai/download](https://ollama.ai/download).
 
 3. **DeepSeek Model**
