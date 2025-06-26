@@ -30,7 +30,7 @@ Before beginning, ensure you have the following installed:
      ```
      Model Size: Around 9 GB. 
 
-## Installation
+## How to Run
 
 1. Clone this repository on your local machine.
 2. Install Flask:
