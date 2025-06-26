@@ -30,7 +30,7 @@ Before beginning, ensure you have the following installed:
      ```
      Model Size: Around 9 GB. 
 
-## How to Run
+## Installation
 
 1. Clone this repository on your local machine.
 2. Install Flask:
@@ -38,7 +38,7 @@ Before beginning, ensure you have the following installed:
    pip install -r requirements.txt
    ```
 
-## Running the Application
+## How to Run
 
 1. Ensure Ollama (with DeepSeek) is running:
    ```bash
